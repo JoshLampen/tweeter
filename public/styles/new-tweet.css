@@ -1,0 +1,38 @@
+.new-tweet {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-tweet > form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.new-tweet > form > textarea {
+  width: 100%;
+  height: 45%;
+  color: #545149;
+  background-color: #f4f1ec;
+  border-color: #f4f1ec;
+  border-bottom: 5px solid #545149;
+}
+
+.new-tweet > form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  font-family: 'Bungee', sans-serif;
+}
+
+.new-tweet > form > div > button {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  width: 110px;
+  height: 40px;
+  background-color: #4056A1;
+  color: white;
+}
