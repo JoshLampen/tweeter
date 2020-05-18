@@ -1,0 +1,9 @@
+header {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a18a40;
+  background-image: url(../images/header-texture.png)
+}
