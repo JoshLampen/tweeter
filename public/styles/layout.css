@@ -24,3 +24,14 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ body {
+   display: flex;
+   flex-direction: column;
+ }
+
+ main {
+   align-self: center;
+   width: 90%;
+   background-color: #f4f1ec;
+ }
