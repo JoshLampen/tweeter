@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#tweet-text").on('keyup keydown paste', function() {
+  $("#tweet-text").on("keyup keydown paste", function() {
     const counter = $(this).parent().find(".counter");
 
     const charCount = this.value.length;
