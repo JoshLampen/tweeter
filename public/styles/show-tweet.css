@@ -28,8 +28,8 @@ article > header > div > img {
   margin-right: 10px;
 }
 
-article > header > p {
-  color: #545149bd;
+.handle {
+  color: #f4f1ec;
 }
 
 article > p {
@@ -55,5 +55,5 @@ article > footer > div {
 }
 
 article > footer > div > i {
-  padding-left: 3px;
+  padding-left: 4px;
 }
