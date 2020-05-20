@@ -27,12 +27,19 @@
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/tweet-hover.js"></script>
     <script type="text/javascript" src="/scripts/tweet-footer-hover.js"></script>
+    <script type="text/javascript" src="/scripts/nav-button-animation.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <button class="nav-button">
+        <h4><strong>write</strong> a new tweet</h4>
+        <div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </button>
     </nav>
 
     <header>
@@ -48,7 +55,7 @@
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
             <div>
-              <button type="submit">Tweet</button>
+              <button type="submit" class="submit-button">Tweet</button>
               <div class="error-container">
                 <i class="fas fa-exclamation-circle"></i>
                 <p></p>
