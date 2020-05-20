@@ -47,6 +47,7 @@ article > footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 45px;
   font-size: 15px;
   margin: 0px 20px 0px 20px;
 }
@@ -57,4 +58,10 @@ article > footer > div {
 
 article > footer > div > i {
   padding-left: 4px;
+}
+
+@media (max-width: 675px) {
+  article > p {
+    height: 150px;
+  }
 }
