@@ -1,13 +1,15 @@
 $(document).ready(function() {
-  $("i").hover(function() {
+  $(document).on("mouseenter", "i", function() {
     const icon = $(this);
     
     icon.css("color", "#4056A1");
     
-  }, function() {
+  });
+  
+  $(document).on("mouseleave", "i", function() {
     const icon = $(this);
-
+  
     icon.css("color", "rgba(64, 87, 161, 0.75)");
-
+    
   });
 });
