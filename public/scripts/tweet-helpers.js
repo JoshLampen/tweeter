@@ -7,22 +7,22 @@ const getDateString = milliseconds => { // helper function for displaying the tw
 
   if (diffTime < 1000 * 60) { // milliseconds in a minute
     diff = Math.floor(diffTime / (1000));
-    unit = "seconds";
+    diff === 1 ? unit = "second" : unit = "seconds";
   } else if (diffTime < 1000 * 60 * 60) { // milliseconds in an hour
     diff = Math.floor(diffTime / (1000 * 60));
-    unit = "minutes";
+    diff === 1 ? unit = "minute" : unit = "minutes";
   } else if (diffTime < 1000 * 60 * 60 * 24) { // milliseconds in a day
     diff = Math.floor(diffTime / (1000 * 60 * 60));
-    unit = "hours";
+    diff === 1 ? unit = "hour" : unit = "hours";
   } else if (diffTime < 1000 * 60 * 60 * 24 * 30) { // approximate milliseconds in a month
     diff = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    unit = "days";
+    diff === 1 ? unit = "day" : unit = "days";
   } else if (diffTime < 1000 * 60 * 60 * 24 * 30 * 12) { // approximate milliseconds in a year
     diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30));
-    unit = "months";
+    diff === 1 ? unit = "month" : unit = "months";
   } else {
     diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30 * 12));
-    unit = "years";
+    diff === 1 ? unit = "year" : unit = "years";
   }
   
   return `${diff} ${unit} ago`;
@@ -32,14 +32,20 @@ const validateTweet = tweet => {
   const entry = $(tweet).serialize();
   const counter = $(tweet).find(".counter");
   let errorMessage;
-
+  
   if (entry.length < 6 || entry === null) { // an empty string, when serialized, will be 'text='
-    errorMessage = "Error: Cannot post an empty tweet";
-  } else if (counter.val() < 0) {
-    errorMessage = "Error: Character limit exceeded";
-  }
+  errorMessage = "Error: Cannot post an empty tweet";
+} else if (counter.val() < 0) {
+  errorMessage = "Error: Character limit exceeded";
+}
 
   return errorMessage;
+};
+
+const escape = string => { // prevents XSS when inputting text from form submission
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(string));
+  return div.innerHTML;
 };
 
 const createTweetElement = tweetObj => {
@@ -52,7 +58,7 @@ const createTweetElement = tweetObj => {
       </div>
       <p class="handle">${tweetObj.user.handle}</p>
     </header>
-    <p>${tweetObj.content.text}</p>
+    <p>${escape(tweetObj.content.text)}</p>
     <footer>
       <p>${getDateString(tweetObj.dateCreated)}</p>
       <div>
