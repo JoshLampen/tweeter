@@ -3,6 +3,8 @@
 $(document).ready(function() {
   const form = $("form");
 
+  hideErrors();
+
   loadTweets();
 
   form.submit(function(event) {
@@ -11,8 +13,10 @@ $(document).ready(function() {
 
     event.preventDefault();
 
+    hideErrors();
+
     if (errorMessage) {
-      alert(errorMessage);
+      sendError(errorMessage);
     } else {
       $.post("/tweets/", entry)
       .done(function(data) {
