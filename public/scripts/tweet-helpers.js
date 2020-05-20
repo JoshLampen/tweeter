@@ -1,4 +1,4 @@
-const getDateString = milliseconds => { // helper function for displaying the tweet creation date
+const getDateString = milliseconds => { // displays the tweet creation date
   const datePosted = new Date(milliseconds);
   const dateNow = new Date().getTime();
   const diffTime = Math.abs(dateNow - datePosted);
@@ -42,7 +42,7 @@ const validateTweet = tweet => {
   return errorMessage;
 };
 
-const escape = string => { // prevents XSS when inputting text from form submission
+const escape = string => { // prevents XSS when inputting text from the form submission
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(string));
   return div.innerHTML;
