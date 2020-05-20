@@ -4,25 +4,27 @@ const getDateString = milliseconds => { // helper function for displaying the tw
   const diffTime = Math.abs(dateNow - datePosted);
   let diff;
   let unit;
+
   if (diffTime < 1000 * 60) { // milliseconds in a minute
-    diff = Math.floor(diffTime / (1000 * 60));
+    diff = Math.floor(diffTime / (1000));
     unit = "seconds";
   } else if (diffTime < 1000 * 60 * 60) { // milliseconds in an hour
-    diff = Math.floor(diffTime / (1000 * 60 * 60));
+    diff = Math.floor(diffTime / (1000 * 60));
     unit = "minutes";
   } else if (diffTime < 1000 * 60 * 60 * 24) { // milliseconds in a day
-    diff = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    diff = Math.floor(diffTime / (1000 * 60 * 60));
     unit = "hours";
   } else if (diffTime < 1000 * 60 * 60 * 24 * 30) { // approximate milliseconds in a month
-    diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30));
+    diff = Math.floor(diffTime / (1000 * 60 * 60 * 24));
     unit = "days";
   } else if (diffTime < 1000 * 60 * 60 * 24 * 30 * 12) { // approximate milliseconds in a year
-    diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30 * 12));
+    diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30));
     unit = "months";
   } else { // approximate milliseconds in a year
     diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30 * 12));
     unit = "years";
   }
+  
   return `${diff} ${unit} ago`;
 };
 
@@ -54,7 +56,7 @@ const createTweetElement = tweetObj => {
 const renderTweets = tweetsArr => {
   for (const item of tweetsArr) {
     const tweet = createTweetElement(item);
-    $(".container").append(tweet);
+    $(".tweet-container").prepend(tweet);
   }
 };
 
@@ -68,13 +70,21 @@ const loadTweets = () => {
 $(document).ready(function() {
   const form = $("form");
 
-  form.submit(function(event) {
-    const tweetText = $(this).serialize();
+  loadTweets();
 
+  form.submit(function(event) {
     event.preventDefault();
 
-    $.post("/tweets/", tweetText);
-    
+    const entry = $(this).serialize();
+    const textarea = $(this).find("#tweet-text");
+    const counter = $(this).find(".counter");
+
+    $.post("/tweets/", entry);
+
+    $(".tweet-container").empty();
+    textarea.val("");
+    counter.html(140);
+
     loadTweets();
   });
 });
