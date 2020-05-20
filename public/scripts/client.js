@@ -61,7 +61,6 @@ const renderTweets = tweetsArr => {
 const loadTweets = () => {
   $.get("/tweets/")
   .then(function(data, status) {
-    console.log(data);
     renderTweets(data);
   });
 };
@@ -75,12 +74,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     $.post("/tweets/", tweetText);
-
+    
     loadTweets();
   });
 });
-
-
-// on success of posting, append the tweet
-// figure out a .catch
-// target the value of the tweet input and post that to /tweets/
