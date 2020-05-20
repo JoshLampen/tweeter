@@ -20,7 +20,7 @@ const getDateString = milliseconds => { // helper function for displaying the tw
   } else if (diffTime < 1000 * 60 * 60 * 24 * 30 * 12) { // approximate milliseconds in a year
     diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30));
     unit = "months";
-  } else { // approximate milliseconds in a year
+  } else {
     diff = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30 * 12));
     unit = "years";
   }
@@ -79,12 +79,24 @@ $(document).ready(function() {
     const textarea = $(this).find("#tweet-text");
     const counter = $(this).find(".counter");
 
-    $.post("/tweets/", entry);
+    if (entry.length < 6 || entry === null) { // an empty string, when serialized, will be 'text='
 
-    $(".tweet-container").empty();
-    textarea.val("");
-    counter.html(140);
+      alert("Error: Cannot post an empty tweet");
 
-    loadTweets();
+    } else if (counter.val() < 0) {
+
+      alert("Error: Character limit exceeded");
+
+    } else {
+
+      $.post("/tweets/", entry);
+  
+      $(".tweet-container").empty();
+      textarea.val("");
+      counter.html(140);
+  
+      loadTweets();
+
+    }
   });
 });
