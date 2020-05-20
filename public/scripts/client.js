@@ -8,10 +8,13 @@ $(document).ready(function() {
   loadTweets();
 
   form.submit(function(event) {
+    const button = $(".submit-button");
     const entry = $(this).serialize();
     const errorMessage = validateTweet(this);
 
     event.preventDefault();
+
+    button.blur();
 
     hideErrors();
 
