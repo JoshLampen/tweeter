@@ -1,6 +1,7 @@
 .new-tweet {
   display: flex;
   flex-wrap: wrap;
+  margin: 15px 0px 50px 0px;
 }
 
 .new-tweet > form {

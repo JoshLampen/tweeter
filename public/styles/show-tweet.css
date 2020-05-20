@@ -2,7 +2,7 @@ article {
   display: flex;
   flex-wrap: wrap;
   border: 5px solid #545149;
-  margin-top: 75px;
+  margin: 60px 0px 25px 0px;
   background-color: #f4f1ec;
 }
 
