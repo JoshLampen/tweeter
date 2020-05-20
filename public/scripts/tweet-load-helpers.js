@@ -1,3 +1,5 @@
+// requires ./tweet-create-helpers.js
+
 const renderTweets = tweetsArr => {
   for (const item of tweetsArr) {
     const tweet = createTweetElement(item);

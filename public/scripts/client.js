@@ -1,4 +1,4 @@
-// helper functions are being pulled from ./tweet-helpers.js
+// requires ./tweet-create-helpers.js ; ./tweet-error-helpers.js ; ./tweet-load-helpers.js
 
 $(document).ready(function() {
   const form = $("form");
