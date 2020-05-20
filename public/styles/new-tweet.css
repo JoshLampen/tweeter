@@ -23,9 +23,9 @@
 .new-tweet > form > div {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 18px;
   font-family: 'Bungee', sans-serif;
 }
 
