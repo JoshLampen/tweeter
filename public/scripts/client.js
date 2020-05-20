@@ -1,4 +1,4 @@
-const getDateString = milliseconds => {
+const getDateString = milliseconds => { // helper function for displaying the tweet creation date
   const datePosted = new Date(milliseconds);
   const dateNow = new Date().getTime();
   const diffTime = Math.abs(dateNow - datePosted);
@@ -26,33 +26,8 @@ const getDateString = milliseconds => {
   return `${diff} ${unit} ago`;
 };
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
 const createTweetElement = tweetObj => {
-  const $tweet = $(`
+  const tweet = `
   <article>
     <header>
       <div>
@@ -63,7 +38,7 @@ const createTweetElement = tweetObj => {
     </header>
     <p>${tweetObj.content.text}</p>
     <footer>
-      <p>${getDateString(tweetObj.created_at)}</p>
+      <p>${getDateString(tweetObj.dateCreated)}</p>
       <div>
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -71,18 +46,41 @@ const createTweetElement = tweetObj => {
       </div>
     </footer>
   </article>
-  `);
+  `;
 
-  return $tweet;
+  return tweet;
 };
 
 const renderTweets = tweetsArr => {
-  for (const tweet of tweetsArr) {
-    const $tweet = createTweetElement(tweet);
-    $(".container").append($tweet);
+  for (const item of tweetsArr) {
+    const tweet = createTweetElement(item);
+    $(".container").append(tweet);
   }
 };
 
+const loadTweets = () => {
+  $.get("/tweets/")
+  .then(function(data, status) {
+    console.log(data);
+    renderTweets(data);
+  });
+};
+
 $(document).ready(function() {
-  renderTweets(data);
+  const form = $("form");
+
+  form.submit(function(event) {
+    const tweetText = $(this).serialize();
+
+    event.preventDefault();
+
+    $.post("/tweets/", tweetText);
+
+    loadTweets();
+  });
 });
+
+
+// on success of posting, append the tweet
+// figure out a .catch
+// target the value of the tweet input and post that to /tweets/
