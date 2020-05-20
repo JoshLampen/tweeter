@@ -1,9 +1,21 @@
 header {
-  height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #a18a40;
+  padding: 20px;
+  background-color: rgb(210, 155, 48);
   background-image: url(../images/header-texture.png)
+}
+
+header > img {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+header > h2 {
+  color: white;
+  margin: 0px;
+  font-weight: normal;
 }
