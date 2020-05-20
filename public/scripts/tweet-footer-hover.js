@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  $(document).on("mouseenter", "i", function() {
+  $(document).on("mouseenter", ".footer-icon", function() {
     const icon = $(this);
     
     icon.css("color", "#4056A1");
     
   });
   
-  $(document).on("mouseleave", "i", function() {
+  $(document).on("mouseleave", ".footer-icon", function() {
     const icon = $(this);
   
     icon.css("color", "rgba(64, 87, 161, 0.75)");
