@@ -1,7 +1,7 @@
 $(document).ready(function() {
   const button = $(".nav-button");
   const newTweetSection = $(".new-tweet");
-  const textarea = $("#tweet-text");
+  const textarea = newTweetSection.find("#tweet-text");
 
   newTweetSection.hide();
 
