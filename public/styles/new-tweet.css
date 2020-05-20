@@ -29,7 +29,12 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.new-tweet > form > div > button {
+.new-tweet > form > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.new-tweet > form > div > div > button {
   display: flex;
   justify-content: center;
   padding-top: 5px;
@@ -37,4 +42,17 @@
   height: 40px;
   background-color: #4056A1;
   color: white;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  color: red;
+}
+
+.error-container > p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  margin: 0px 7px 0px 7px;
 }
