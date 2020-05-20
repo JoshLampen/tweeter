@@ -20,7 +20,9 @@
     <script src="https://kit.fontawesome.com/bf5bfaeaa4.js" crossorigin="anonymous"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/tweet-helpers.js"></script> 
+    <script type="text/javascript" src="/scripts/tweet-create-helpers.js"></script>
+    <script type="text/javascript" src="/scripts/tweet-load-helpers.js"></script>
+    <script type="text/javascript" src="/scripts/tweet-error-helpers.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/tweet-hover.js"></script>
@@ -50,7 +52,13 @@
         <form method="POST" action="/tweets/">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <div>
+              <button type="submit">Tweet</button>
+              <div class="error-container">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Hello</p>
+              </div>
+            </div>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
