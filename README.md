@@ -4,17 +4,14 @@ Tweeter is a single-page twitter clone built with HTML, CSS/SASS, JS, jQuery and
 
 ## Final Product
 
-### Login Page
-!["Login Page"](https://github.com/JoshLampen/tinyapp/blob/master/docs/login-page.png?raw=true)
+### Initial Page
+!["Initial Page"](https://github.com/JoshLampen/tweeter/blob/master/docs/initial-page.png?raw=true)
 
-### URLs Page
-!["URLs Page"](https://github.com/JoshLampen/tinyapp/blob/master/docs/urls-page.png?raw=true)
+### Make New Tweet
+!["Make New Tweet"](https://github.com/JoshLampen/tweeter/blob/master/docs/new-tweet.png?raw=true)
 
-### Show URL Page
-!["Show URL Page"](https://github.com/JoshLampen/tinyapp/blob/master/docs/show-url-page.png?raw=true)
-
-### New URL Page
-!["New URL Page"](https://github.com/JoshLampen/tinyapp/blob/master/docs/new-url-page.png?raw=true)
+### Show Tweets
+!["Show Tweets"](https://github.com/JoshLampen/tweeter/blob/master/docs/show-new-tweet.png?raw=true)
 
 ## Dependencies
 
