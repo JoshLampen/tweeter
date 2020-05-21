@@ -1,4 +1,5 @@
-// requires ./tweet-create-helpers.js ; ./tweet-error-helpers.js ; ./tweet-load-helpers.js
+// manages the core process of submitting tweets
+// requires ./tweet-create-helpers.js && ./tweet-error-helpers.js && ./tweet-load-helpers.js
 
 $(document).ready(function() {
   const form = $("form");

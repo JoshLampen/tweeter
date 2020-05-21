@@ -3,6 +3,7 @@ const validateTweet = tweet => {
   const counter = $(tweet).find(".counter");
   let errorMessage;
   
+  // manage edges cases: empty string submission, or submission is over character limit
   if (entry.length < 6 || entry === null) { // an empty string, when serialized, will be 'text='
     errorMessage = "Error: Cannot post an empty tweet";
   } else if (counter.val() < 0) {

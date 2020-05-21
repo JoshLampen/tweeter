@@ -7,7 +7,7 @@ $(document).ready(function() {
   backToTopButton.hide();
 
   $(window).scroll(function() {
-    if ($(this).scrollTop() >= 290) {
+    if ($(this).scrollTop() >= 290) { // decide which button is shown based on scroll position
       navButton.fadeOut();
       backToTopButton.fadeIn();
     } else {

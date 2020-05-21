@@ -1,4 +1,4 @@
-const getDateString = milliseconds => { // displays the tweet creation date
+const getDateString = milliseconds => { // returns time since tweet created; made with help from https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
   const datePosted = new Date(milliseconds);
   const dateNow = new Date().getTime();
   const diffTime = Math.abs(dateNow - datePosted);

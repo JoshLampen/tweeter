@@ -18,7 +18,6 @@ $(document).ready(function() {
       const icon = $(this);
     
       icon.css("color", "rgba(64, 87, 161, 0.75)");
-      
     });
   });
   
@@ -29,6 +28,5 @@ $(document).ready(function() {
     article.css("box-shadow", "none");
     
     handle.css("color", "#f4f1ec");
-    
   });
 });
