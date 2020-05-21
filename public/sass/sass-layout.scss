@@ -1,3 +1,5 @@
+@import "_variables";
+
 html {
   box-sizing: border-box;
 }
@@ -9,10 +11,10 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 90px;
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $grey;
+  background-color: $background-white;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $sec-font;
 }
 
 main {
@@ -32,8 +34,8 @@ main {
   right: 15px;
   border-radius: 100%;
   border: none;
-  background-color: red;
-  color: white;
+  background-color: $red;
+  color: $white;
 }
 
 .back-to-top-button:hover {
@@ -42,11 +44,10 @@ main {
 
 footer {
   height: 25px;
-  background-color: #f4f1ec;
+  background-color: $background-white
 }
 
 @media only screen and (min-width: 1024px) {
-
   body {
     flex-direction: row;
   }

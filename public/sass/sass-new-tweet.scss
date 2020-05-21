@@ -1,3 +1,5 @@
+@import "_variables";
+
 .new-tweet {
   display: flex;
   flex-wrap: wrap;
@@ -13,10 +15,10 @@
 #tweet-text {
   width: 100%;
   height: 3em;
-  color: #545149;
-  background-color: #f4f1ec;
-  border-color: #f4f1ec;
-  border-bottom: 5px solid #545149;
+  color: $grey;
+  background-color: $background-white;
+  border-color: $background-white;
+  border-bottom: 5px solid $grey;
   font-size: 20px;
 }
 
@@ -26,7 +28,7 @@
   align-items: flex-start;
   width: 100%;
   margin-top: 18px;
-  font-family: 'Bungee', sans-serif;
+  font-family: $prim-font;
 }
 
 .new-tweet > form > div > div {
@@ -40,24 +42,24 @@
   padding-top: 4px;
   width: 110px;
   height: 40px;
-  background-color: #4056A1;
-  color: white;
+  background-color: $indigo;
+  color: $white;
   border-radius: 8px;
 }
 
 .submit-button:hover {
-  background-color: rgb(34, 54, 117);
+  background-color: $indigo-hover;
 }
 
 .error-container {
   display: flex;
   align-items: center;
   margin-left: 20px;
-  color: red;
+  color: $red;
 }
 
 .error-container > p {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
+  font-family: $sec-font;
+  font-size: 18px;
   margin: 0px 7px 0px 7px;
 }

@@ -1,0 +1,101 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 90px;
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+main {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 90%;
+}
+
+.back-to-top-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 75px;
+  height: 75px;
+  bottom: 25px;
+  right: 15px;
+  border-radius: 100%;
+  border: none;
+  background-color: red;
+  color: #FFFFFF;
+}
+
+.back-to-top-button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+footer {
+  height: 25px;
+  background-color: #f4f1ec;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  header {
+    width: 25vw;
+    padding-top: 30px;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 75vw;
+  }
+  .new-tweet {
+    width: 90%;
+    margin-bottom: 0px;
+  }
+  .tweet-container {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=sass-layout.css.map */
