@@ -44,3 +44,19 @@ footer {
   height: 25px;
   background-color: #f4f1ec;
 }
+
+@media only screen and (min-width: 1024px) {
+  
+  body {
+    flex-direction: row;
+  }
+
+  header {
+    width: 25vw;
+  }
+
+  main {
+    width: 75vw;
+    padding: 0px 30px 0px 30px;
+  }
+}
