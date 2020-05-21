@@ -1,10 +1,9 @@
 @import "_variables";
+@import "_mixins";
 
 header {
-  display: flex;
-  flex-direction: column;
+  @include vertAlign();
   justify-content: flex-start;
-  align-items: center;
   padding: 20px;
   background-color: $orange;
   background-image: url(../images/header-texture.png)
@@ -17,7 +16,7 @@ header > img {
 }
 
 header > h2 {
-  color: $fc-white;
+  color: $white;
   margin: 0px;
   font-weight: normal;
 }
