@@ -14,7 +14,7 @@ header {
           justify-content: flex-start;
   padding: 20px;
   background-color: #d29b30;
-  background-image: url(../images/header-texture.png);
+  background-image: url(../../images/header-texture.png);
 }
 
 header > img {
