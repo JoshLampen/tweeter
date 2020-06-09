@@ -1,21 +1,14 @@
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding-top: 90px;
   color: #545149;
   background-color: #f4f1ec;
@@ -24,26 +17,15 @@ body {
 }
 
 main {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   width: 90%;
 }
 
 .back-to-top-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   width: 75px;
   height: 75px;
@@ -56,8 +38,7 @@ main {
 }
 
 .back-to-top-button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 footer {
@@ -65,37 +46,36 @@ footer {
   background-color: #f4f1ec;
 }
 
+button {
+  border-style: none;
+}
+
 @media only screen and (min-width: 1024px) {
   body {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
+
   header {
     width: 25vw;
     padding-top: 30px;
   }
+
   main {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     width: 75vw;
   }
+
   .new-tweet {
     width: 90%;
     margin-bottom: 0px;
   }
+
   .tweet-container {
     width: 90%;
     margin-bottom: 20px;
   }
 }
+
 /*# sourceMappingURL=sass-layout.css.map */

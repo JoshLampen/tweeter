@@ -46,6 +46,10 @@ footer {
   background-color: $background-white
 }
 
+button {
+  border-style: none;
+}
+
 @media only screen and (min-width: 1024px) {
   body {
     flex-direction: row;
